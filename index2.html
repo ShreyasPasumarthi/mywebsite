@@ -1,0 +1,86 @@
+<!doctype html>
+    <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+       <link href="https://fonts.googleapis.com/css?family=Cinzel|Major+Mono+Display|Monoton" rel="stylesheet">
+    </head>
+  <body>
+    
+    <header class="header">
+      <p>Bryan Sperry</p>
+    </header>
+    <ul id="menuprimary" style="position: sticky; top: 0;  z-index: 1">
+    <li><a href="index.html">home</a></li>
+    <li><a href="portfolio.html">portfolio</a></li>
+    <li><a href="aboutme.html">about me</a></li>
+    </ul>
+    <h1 class="title">home page</h1>
+    <audio id="audio">
+    <source src="music/morning.mp4">
+    </audio>
+    <br>
+   <script>
+var x = document.getElementById("audio"); 
+
+function playAudio() { 
+  x.play(); 
+} 
+
+function pauseAudio() { 
+  x.pause(); 
+} 
+</script>
+<div class="container">
+     <img class="image2" src="images/fallingwater.jpg">
+         <div style="width:40%; top:100%; opacity:1" class="caption">
+         <button onclick="playAudio()" type="button">Play</button>
+        <button onclick="pauseAudio()" type="button">Pause</button>
+        </div>
+         </div>
+         <br>
+         <br>
+         <br>
+         <br>
+         <script>
+    (function (window, document, undefined) {
+	'use strict';
+	if (!('localStorage' in window)) return;
+	var nightMode = localStorage.getItem('gmtNightMode');
+	if (nightMode) {
+		document.documentElement.className += 'nightmode';
+	}
+})(window, document);
+
+
+(function (window, document, undefined) {
+
+	'use strict';
+
+	if (!('localStorage' in window)) return;
+
+	var nav = document.querySelector('#menuprimary');
+	if (!nav) return;
+
+	nav.innerHTML += '<li style="float:right!important" id="nightmode"><a role="button" href="#">toggle night mode</a></li>';
+
+	var nightMode = document.querySelector('#nightmode');
+	if (!nightMode) return;
+
+	nightMode.addEventListener('click', function (event) {
+		event.preventDefault();
+		document.documentElement.classList.toggle('nightmode');
+		if ( document.documentElement.classList.contains('nightmode') ) {
+			localStorage.setItem('gmtNightMode', true);
+			return;
+		}
+		localStorage.removeItem('gmtNightMode');
+	}, false);
+
+})(window, document);
+    </script>
+ </body>
+</html>
+

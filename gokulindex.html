@@ -1,0 +1,119 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="theme-color" content="#1C74A6" />
+
+    <!-- Star Script -->
+    <script src="starfield.js"></script>
+
+    <!-- My Style Sheet -->
+    <link rel="stylesheet" href="css/mainstyles.css">
+
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+
+    <!-- This is the tab icon -->
+    <link rel="shortcut icon" href="images/github-avatar.ico">
+
+    <!-- Material Design for Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <title>Home</title>
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1C74A6">
+    <img src="images/mylogo-web.png" height="50px" width="50px" style="padding:10px" />
+    <a class="navbar-brand" href="#">
+                    JavaCafe01
+                  </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="portfolio.html">Projects</a>
+            <a class="nav-item nav-link" href="about.html">About</a>
+        </div>
+    </div>
+</nav>
+
+<body style="background:#000;">
+
+    <canvas id="starfieldCanvas"></canvas>
+
+    <script>
+        (function() {
+            var
+                // Obtain a reference to the canvas element
+                // using its id.
+                htmlCanvas = document.getElementById('starfieldCanvas'),
+
+                // Obtain a graphics context on the
+                // canvas element for drawing.
+                context = htmlCanvas.getContext('2d');
+
+            // Start listening to resize events and
+            // draw canvas.
+            initialize();
+
+            function initialize() {
+                // Register an event listener to
+                // call the resizeCanvas() function each time
+                // the window is resized.
+                window.addEventListener('resize', resizeCanvas, false);
+
+                // Draw canvas border for the first time.
+                resizeCanvas();
+            }
+
+            // Display custom canvas.
+            // In this case it's a blue, 5 pixel border that
+            // resizes along with the browser window.
+            function redraw() {}
+
+            // Runs each time the DOM window resize event fires.
+            // Resets the canvas dimensions to match window,
+            // then draws the new borders accordingly.
+            function resizeCanvas() {
+                htmlCanvas.width = window.innerWidth;
+                htmlCanvas.height = window.innerHeight;
+                redraw();
+            }
+
+        })();
+    </script>
+
+
+    <div class="content">
+        <div class="content__container">
+            <p class="content__container__text">
+                Hello
+            </p>
+
+            <ul class="content__container__list">
+                <li class="content__container__list__item">World ! </li>
+                <li class="content__container__list__item">Windows !</li>
+                <li class="content__container__list__item">Android !</li>
+                <li class="content__container__list__item">Ubuntu !</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() { $('body').bootstrapMaterialDesign(); });
+    </script>
+</body>
+
+</html>
